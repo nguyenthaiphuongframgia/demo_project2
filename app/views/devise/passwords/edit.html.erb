@@ -1,0 +1,27 @@
+<% provide :title, t("views.password.edit.title") %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-login margin_top">
+    <h2><%= t("views.password.edit.change_password") %></h2>
+      <%= form_for resource, as: resource_name, url: password_path(resource_name), html: { method: :put } do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+        <div class="field">
+          <%= f.label :password, t("views.password.edit.new_password") %><br />
+          <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> <%= t("views.password.edit.charact_min") %>)</em><br/>
+          <% end %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+        </div>
+        <div class="field">
+          <%= f.label :password_confirmation, t("views.password.edit.confirm_password") %><br/>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="actions">
+          <%= f.submit t("views.password.edit.change_my_password"), class: "btn btn-primary btn-md" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<% provide :title, t("admin.publishers.publisher_list") %>
+<h1><%= t "admin.publishers.publisher_list" %></h1>
+  <div class="container margin_top">
+    <div class="row">
+      <%= search_form_for [:admin, @q] do |f| %>
+        <div class="col-xs-6 col-xs-offset-2">
+          <div class="input-group">
+            <input type="hidden" name="search_param" value="all" id="search_param">
+            <%= f.text_field :name_or_email_cont,
+              placeholder: t("admin.publishers.search_publisher"), class: "form-control" %>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+  merge(format: "xlsx") %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "admin.publishers.index" %></th>
+        <th><%= t "admin.publishers.publisher_name" %></th>
+        <th><%= t "admin.publishers.address" %></th>
+        <th><%= t "admin.publishers.email" %>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @publishers %>
+    </tbody>
+  </table>
+  </div>
+<%= paginate @publishers, theme: "twitter-bootstrap-3" %>

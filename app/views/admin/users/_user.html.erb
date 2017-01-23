@@ -1,0 +1,24 @@
+<div class="col-md-4">
+  <div class="well">
+    <%= link_to get_image_user(user, "media-object"),
+      [:admin, user], class: "pull-left" %>
+    <div class="media-body">
+      <p><%= user.name %></p>
+      <p><%= user.email %></p>
+      <p><%= link_to t("views.users.index.detail_user"), [:admin, user] %></p>
+      <p>
+        <% if can? :delete, [:admin, user] %>
+          <%= link_to t("admin.users.delete"), [:admin, user], method: :delete,
+            data: {confirm: t("admin.users.are_you_sure")},
+            class: "label btn btn-danger col-md-2" %> &nbsp;
+        <% end %>
+        <% if user.user? %>
+          <% if can? :edit, [:admin, user] %>
+            <%= link_to t("admin.users.manager"), admin_user_path(user, role: :manager),
+              method: :put, remote: true, class: "label btn btn-info col-md-2 col-md-offset-1" %>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

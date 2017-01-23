@@ -1,0 +1,14 @@
+maximum:
+  name: 50
+  description: 150
+  content: 200
+  email: 30
+  phone: 11
+  address: 100
+per_page: 10
+size_image_avater: 100
+format:
+  request_date_time_format: "%Y-%m-%d %H-%M"
+  date_time_format: "%Y_%m_%d_%H-%M-%S"
+date_format: "%Y-%m-%d"
+status_respone: "OK"

@@ -1,0 +1,16 @@
+<tr>
+  <td><%= book.id %></td>
+  <td><%= image_tag book.image.url, size: Settings.size_image_avater %></td>
+  <td><%= link_to book.title, admin_book_path(book) %></td>
+  <td><%= book.category.name %></td>
+  <td><%= get_author book.id %></td>
+  <td><%= book.publisher.name %></td>
+  <td>
+    <%= link_to edit_admin_book_path book do %>
+      <span class="btn glyphicon glyphicon-pencil btn-info"> </span>
+    <% end %>
+    <%= link_to [:admin, book], method: :delete, data: {confirm: t("delete.confirm")} do %>
+      <span class="btn glyphicon glyphicon-remove btn-danger "> </span>
+    <% end %>
+  </td>
+</tr>

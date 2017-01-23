@@ -1,0 +1,14 @@
+<div class="well">
+   <div class="media">
+     <%= image_tag book.image.url, size: Settings.size_image_avater,
+      :class => "pull-left" %>
+     <div class="media-body">
+       <h4 class="media-heading"><%= link_to book.title, book %></h4>
+       <p class="text-right"><%= book.publisher.name %></p>
+       <p class=""><%= get_author book.id %></p>
+       <ul class="list-inline list-unstyled">
+         <li><span><i class="glyphicon glyphicon-calendar"></i> <%= book.created_at %> </span></li>
+       </ul>
+     </div>
+   </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container margin_top">
+  <div class="row">
+    <%= search_form_for [:admin, @q] do |f| %>
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="input-group">
+          <input type="hidden" name="search_param" value="all" id="search_param">
+          <%= f.text_field :name_or_email_cont,
+            placeholder: t("admin.users.search_user"), class: "form-control" %>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+          <div class="col-xs-2">
+            <%= f.select :role_start,
+              options_for_select([["Users", 0], ["Manager", 1]]),
+              class: "form-control", include_blank: t("all_role")
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+  merge(format: "xlsx") ,class: "btn btn-link" %>
+<% if @users.empty? %>
+  <%= t("admin.users.not_found") %>
+<% else  %>
+  <%= paginate @users, theme: "twitter-bootstrap-3" %>
+  <div class="row">
+    <%= render @users %>
+  </div>
+  <%= paginate @users, theme: "twitter-bootstrap-3" %>
+<% end %>

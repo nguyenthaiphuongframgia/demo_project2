@@ -1,0 +1,2 @@
+$('#show_comments-<%= @book.id %>').html('<%= j render @book.comments %>');
+$('#comment_content_field-<%= @book.id %>').val('');

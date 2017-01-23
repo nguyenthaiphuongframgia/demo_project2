@@ -1,0 +1,24 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width: 768px) {
+    .contact-panel {
+        width: 50%;
+    }
+}

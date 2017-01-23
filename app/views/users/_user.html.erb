@@ -1,0 +1,13 @@
+ <div class="col-md-4">
+  <div class="well">
+    <div class="media">
+      <%= link_to get_image_user(user, "media-object"), user,
+        class: "pull-left" %>
+        <div class="media-body">
+          <p><%= user.name %></p>
+          <p><%= user.email %></p>
+          <p><%= link_to t("views.users.index.detail_user"), user %></p>
+        </div>
+    </div>
+  </div>
+</div>

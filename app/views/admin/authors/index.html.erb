@@ -1,0 +1,39 @@
+<% provide :title, t("admin.authors.authors_list") %>
+<div class="container margin_top">
+  <div class="row">
+    <%= search_form_for [:admin, @q] do |f| %>
+      <div class="col-xs-6 col-xs-offset-2">
+        <div class="input-group">
+          <input type="hidden" name="search_param" value="all" id="search_param">
+          <%= f.text_field :name_cont, placeholder: t("admin.authors.search_author"),
+            class: "form-control" %>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= link_to t("excel"), params.except(:host, :port, :protocol).permit!.
+  merge(format: "xlsx") %>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "admin.authors.index" %></th>
+        <th><%= t "admin.authors.image" %></th>
+        <th><%= t "admin.authors.author_name" %></th>
+        <th><%= t "admin.authors.description" %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @authors %>
+    </tbody>
+  </table>
+</div>
+<%= paginate @authors, theme: "twitter-bootstrap-3" %>

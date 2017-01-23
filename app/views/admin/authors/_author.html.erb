@@ -1,0 +1,19 @@
+<div class="container-fluid">
+<tr>
+  <td><%= author.id %></td>
+  <td><%= image_tag author.image.url, size: Settings.size_image_avater %></td>
+  <td><%= author.name %></td>
+  <td><%= author.description %></td>
+  <td>
+    <%= link_to edit_admin_author_path author do %>
+      <span class="glyphicon glyphicon-pencil btn btn-info "> </span>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to [:admin, author], method: :delete,
+      data: {confirm: t("are_you_sure")} do %>
+        <span class="glyphicon glyphicon-remove btn btn-danger "> </span>
+    <% end %>
+  </td>
+</tr>
+</div>

@@ -1,0 +1,97 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import "bootstrap-datetimepicker";
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+.hight_center{
+  height: 50px;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+/*layout application*/
+
+.margin_top {
+   margin-top: 80px;
+ }
+
+ .margin_top_user {
+   margin-top: 100px;
+ }
+
+ /* form sign up*/
+
+.margin_width {
+  width: 80px;
+}
+
+.form-login {
+    background-color: #f0a800;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: #d2d2d2;
+    border-width: 5px;
+    box-shadow: 0 1px 0 #cfcfcf;
+}
+
+
+.margin_left {
+  margin-left: 20px;
+}
+
+.margin_top {
+  margin-top: 40px;
+}
+
+/* list user*/
+
+@media(min-width: 768px) {
+    .contact-panel {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 980px) {
+    .hero {
+        width: 980px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .hero h1 {
+        font-size: 4em;
+    }
+}
+
+.media-body {
+  display: block;
+}

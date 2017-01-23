@@ -1,0 +1,40 @@
+<h1><%= t "book_info" %></h1>
+<div class="row thumbnail">
+  <div class="col-sm-2">
+    <p><%= image_tag @book.image.url, size: Settings.size_image_avater,
+      :class => "pull-left" %></p>
+    <p><%= render "likes", book: @book %></p>
+  </div>
+<div class="col-sm-2">
+  <div class="">
+    <h3 class="text-center"><%= t ".title" %> : <%= @book.title %></h3>
+    <h4 class="text-center"><%= t ".book_description" %> : <%= @book.description %></h4>
+    <h4 class="text-center"><%= t ".author_description" %> : <%= get_author @book.id %></h4>
+    <h4 class="text-center"><%= t".about_publishser" %> : <%= @book.publisher.name %></h4>
+    <p class="text-center"><%= t".Email" %> : <%= @book.publisher.email %></p>
+  </div>
+</div>
+<div class="col-sm-3">
+  <% if current_user %>
+    Visual Effects: <%= rating_for @book, "visual_effects", disable_after_rate: false %>
+      <br>
+    <% end %>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div><a href="https://www.facebook.com/sharer/sharer.php?u=">Share on Facebook</a> </div>
+    <div><a href="https://twitter.com/home?status=">Share on Twitter</a></div>
+    <div><a href="https://plus.google.com/share?url=">Share on Google+</a></div>
+  </div>
+  <div class="col-md-6">
+    <div><h2><%= t "review" %></h2></div>
+    <div id="show_comments-<%= @book.id %>">
+      <%= render @book.comments %>
+    </div>
+    <% if current_user.user? %>
+      <%= render "comments/new_comment_form" %>
+    <% end%>
+  </div>
+</div>

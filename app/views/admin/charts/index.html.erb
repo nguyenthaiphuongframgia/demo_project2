@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="margin_top"><%= t ".today" %> : <%= Time.now.strftime(Settings.date_format) %></div>
+    <div class="col-sm-4">
+      <%= form_tag admin_charts_path, class: "form-horizontal bucket-form margin_top", method: "get" do %>
+        <div class="form-group">
+          <div class="input-group date" id="datetimepicker">
+            <%= text_field_tag :start_day, params[:start_day], placeholder: "start day",
+              class: 'form-control', data: { date_format: 'YYYY/MM/DD' } %>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+          <div class="input-group date" id="datetimepicker1">
+            <%= text_field_tag :end_day, params[:end_day], placeholder: "end day",
+              class: 'form-control', data: { date_format: 'YYYY/MM/DD' } %>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
+        </div>
+        <%= submit_tag "Search", start_day: nil, end_day: nil, class: "btn-info btn" %>
+    <% end %>
+  </div>
+  <div class=" col-md-8 col-md-offset-5 margin_top"> <h6>Data Users </h6> </div>
+  <div class="margin_tops"> <%= column_chart @user_array %> </div>
+  <div class="hight_center"> </div>
+  <div class=" col-md-8 col-md-offset-5 margin_top"> <h6>Data Books </h6> </div>
+  <div class="margin_tops"> <%= column_chart @book_array %> </div>
+</div>

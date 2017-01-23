@@ -1,0 +1,27 @@
+<%= form_for [:admin, @book] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control" %>
+
+   <%= f.fields_for :authors do |builder| %>
+          <%= render "admin/shared/author_fields", f: builder %>
+  <% end %>
+
+  <p><%= link_to_add_fields "Add author", f, :authors %></p>
+
+  <%= f.label :category %>
+  <%= f.select :category_id, options_for_select(
+    @categories.collect{|category|["#{category.name}", category.id]},
+    {class: "form-control"}) %>
+  <br>
+  <%= f.label :publisher %>
+  <%= f.select :publisher_id, options_for_select(
+    @publishers.collect{|publisher|["#{publisher.name}", publisher.id]},
+    {class: "form-control"}) %>
+  <br>
+  <%= f.submit t("admin.books.add_book"), class: "btn btn-success" %>
+<% end %>

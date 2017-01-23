@@ -1,0 +1,39 @@
+<% provide :title, t("admin.books.book_list") %>
+<h1><%= t "admin.books.book_list" %></h1>
+<div class="row">
+  <%= search_form_for @q do |f| %>
+    <div class="col-md-3">
+      <%= f.text_field :title_cont, placeholder: t("admin.books.search"),
+        class: "form-control search-field", autofocus: true %>
+    </div>
+    <div class="col-md-1">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </span>
+    </div>
+    <div class="col-md-2">
+      <%= f.select :category_id_start,
+        options_for_select(@categories.map{|c| [c.name, c.id]}),
+        class: "form-control", include_blank: t("all_categories")
+      %>
+    </div>
+    <div class="col-md-2">
+      <%= f.select :publisher_id_start,
+        options_for_select(@publishers.map{|c| [c.name, c.id]}),
+        class: "form-control", include_blank: t("all_publishers") %>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+      <%= f.select :id_start,
+        options_for_select(@authors.map{|c| [c.name, c.id]}),
+        class: "form-control", include_blank: t("all_authors") %>
+    </div>
+  <% end %>
+</div>
+<div class="table-responsive margin_top">
+  <%= render @books %>
+  <%= paginate @books, theme: "twitter-bootstrap-3" %>
+</div>

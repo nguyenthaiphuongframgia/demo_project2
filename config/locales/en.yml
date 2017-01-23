@@ -1,0 +1,185 @@
+
+en:
+  are_you_sure: "Are you sure ?"
+  users_file_name: "users"
+  index: "Index"
+  follow: "Follow"
+  review: "Review"
+  unfollow: "UnFollow"
+  confirm:
+    delete: "Are you sure?"
+  reviews:
+    new_comment: "New Comment"
+  delete:
+    confirm: "Are you sure?"
+  excel: "Export excel"
+  user_name: "User name"
+  email: "Email"
+  joined_date: "Joined date"
+  is_admin: "Is admin"
+  hello: "Hello world"
+  library_manager: "Library Manager"
+  app:
+    helpers:
+      application:
+        base_title: "Library Manager"
+
+  static_pages:
+    home:
+      title_welcome: "Welcome to Library Manager"
+      content_welcome: "This is the home page for the"
+      books_system: "Library Manager"
+    help:
+      title: "Help"
+      content: "Get help on the System administrator at the"
+    contact:
+      title: "Contact"
+      content: "Contact the administrator about the Library Manager System at the"
+      contact_link: "Contact page"
+    about:
+      title: "About"
+      content: "This is about page."
+
+  layout_header:
+    logo: "Library Manager"
+    home: "Home"
+    requests: "Requests"
+    signout: "Sign out"
+    create: "Create"
+    edit: "Edit"
+    all_user: "All users"
+    book: "Book"
+    all_book: "All Books"
+    charts: "Charts"
+    category: "Category"
+    all_category: "All categories"
+  layout_footer:
+    about: "About"
+    contact: "Contact"
+    library_manager: "Library Manager"
+    privacy_note: "Privacy Note"
+
+  views:
+    users:
+      index:
+        detail_user: "Detail User"
+      edit:
+        title: "Edit user"
+        bt_title_edit: "Save changes"
+        update_title: "Update your profile"
+      new:
+        title: "Sign up"
+        bt_title_signup: "Sign Up"
+        create: "Create User"
+      show:
+        list_reviews: "List Reviews"
+        list_favorite: "List Favorite Books"
+        list_read: "List Read Books"
+        list_request: "History Request"
+        title: "Title: "
+        content: "Content: "
+        update_image_bt: "Upload"
+        bt_send_rq: "Send Request"
+    session:
+      new:
+        title_login: "Log in"
+        placeholder_email: "Email"
+        placeholder_pass: "Password"
+        remember: "Remember me"
+        bt_signup_now: "Sign up now!"
+    password:
+      new:
+        forgot: "Forgot your password?"
+        sent_email: "Send me reset password instructions"
+      edit:
+        title: "Edit Password"
+        change_password: "Change your password"
+        change_my_password: "Change my password"
+        new_password: "New Password"
+        charact_min: "characters minimum"
+        confirm_password: "Confirm new password"
+    shared:
+      login: "Log in"
+      signup: "Sign up"
+      forgot_password: "Forgot your password?"
+    email:
+      confirm_account: "Confirm my account"
+      change_password: "Change my password"
+  admin:
+    users:
+      delete: "Delete"
+      create_success: "Create user success"
+      create_fails: "Create user fails"
+      success_destroyed_user: "Success destroyed user"
+      unsuccess_destroyed_user: "Unsuccess destroyed user"
+      are_you_sure: "Are you sure ?"
+      profile_success: "Update profile success"
+      profile_fails: "Update profile fails"
+      edit: "Edit user"
+      update: "Update Profile"
+      search_user: "Search users"
+      you_allow: "You not allow conntected"
+      manager: "Manager"
+      you_save: "You had choose success"
+      you_fails: "You had choose fails"
+      not_found: "User not found"
+    authors:
+      author_add_success: "Create author success"
+      edit_author: "Update author success"
+      edit_failed: "Edit author fails"
+      delete_success: "Delete author success"
+      delete_unsuccess: "Delete author fails"
+      authors_file_name: "author"
+      search_author: "Search author"
+      index: "Index"
+      image: "Image"
+      author_name: "Author name"
+      description: "Description"
+      quantity: "Quantity"
+      add_author: "Add author"
+      edit_authors: "Update author"
+      authors_list: "List author"
+    publishers:
+      publisher_list: "Publisher list"
+      search_publisher: "Search publishers"
+      index: "Index"
+      publisher_name: "Publisher name"
+      address: "Address"
+      email: "Email"
+      add_publisher: "Add publisher"
+      edit_publisher: "Edit publisher"
+      add_publisher: "Add publisher"
+      index: "Index"
+      name: "Publisher Name"
+      description: "Description"
+      quantity: "Quantity"
+    books:
+      search: "Search books"
+      book_list: "List books"
+      add_book: "Add book"
+      book_file_name: "books"
+      book_add_success: "Add book success"
+      delete_book_borrowed: "Book borrowed not deleted"
+      delete_success: "Deleted success"
+      delete_unsuccess: "Delete fails"
+      edit_book: "Update book success"
+      edit_failed: "Update book fails"
+      index: "Index"
+      category_name: "Category name"
+      book_title: "Book title"
+      author_name: "Author name"
+      publisher_name: "Publisher name"
+    categories:
+      create_category: "Create Category"
+      categories_list: "Categories list"
+      search_catergory: "Search category"
+      index: "Index"
+      category_name: "Category name"
+      description: "Description"
+      quantity: "Quantity"
+      categories_file_name: "categories"
+      category_add_success: "Add category success"
+      edit_category: "Update category success"
+      edit_failed: "Update fails"
+      delete_success: "Delete category success"
+      delete_unsuccess: "Delete category fails"

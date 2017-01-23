@@ -1,0 +1,4 @@
+<%= f.fields_for :authors do |result| %>
+    <%= result.label :name %>
+    <%= result.text_area :name, class: "form-control" %>
+  <% end %>
